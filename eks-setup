@@ -16,7 +16,7 @@
 - It will take 15 to 20 minutes to create the Cluster Control Plane 
 ```
 # Create Cluster
-eksctl create cluster --name=myeks \
+eksctl create cluster --name=myeks78 \
                       --region=us-east-1 \
                       --zones=us-east-1a,us-east-1b \
                       --without-nodegroup 
@@ -34,7 +34,7 @@ eksctl get clusters
 # Replace with region & cluster name
 eksctl utils associate-iam-oidc-provider \
     --region us-east-1 \
-    --cluster myeks \
+    --cluster myeks78 \
     --approve
 ```
 
@@ -49,7 +49,7 @@ eksctl utils associate-iam-oidc-provider \
 - These add-ons will create the respective IAM policies for us automatically within our Node Group role.
  ```
 # Create Public Node Group   
-eksctl create nodegroup --cluster=myeks \
+eksctl create nodegroup --cluster=myeks78 \
                         --region=us-east-1 \
                         --name=myeks-ng-public1 \
                         --node-type=t3.medium \
